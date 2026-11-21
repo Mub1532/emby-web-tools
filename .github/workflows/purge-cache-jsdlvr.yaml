@@ -1,0 +1,22 @@
+name: Purge jsDelivr Cache on new commit if CSS was edited
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'styles/**.css'
+
+jobs:
+  purge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Purge jsDelivr Cache on new commit
+        run: |
+          for cssFile in $(git diff --name-only ${{ github.event.before }} ${{ github.sha }} -- 'styles/*.css'); do
+            curl "https://purge.jsdelivr.net/gh/Mub1532/emby-web-tools@main/${cssFile}"
+          done
