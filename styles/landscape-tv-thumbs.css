@@ -1,0 +1,42 @@
+/* tv guide info thumbnail, landscape */
+.videoosd-poster {
+    width: auto !important;
+    max-width: 30% !important;
+    min-height: 100% !important;
+    aspect-ratio: 16 / 9 !important;
+}
+
+.osdInfoImageCardBox .cardPadder-portrait {
+    padding-bottom: 0 !important;
+    aspect-ratio: 16 / 9 !important;
+}
+
+/* live tv list items, landscape at backdrop width */
+div[is="emby-itemscontainer"][data-virtualscrolllayout="horizontal-grid"]:is([data-monitor="Timers,SeriesTimers"], [data-refreshinterval="300000"]) .cardPadder-portrait {
+    padding-bottom: 0 !important;
+    aspect-ratio: 16 / 9 !important;
+}
+
+div[is="emby-itemscontainer"][data-virtualscrolllayout="horizontal-grid"]:is([data-monitor="Timers,SeriesTimers"], [data-refreshinterval="300000"]) .virtualScrollItem {
+    width: calc(93vw / max((var(--backdrop-cards) + var(--user-cards-size-adjust)), 1)) !important;
+}
+
+/* live tv single item, landscape at backdrop width */
+div[is="emby-itemscontainer"].detailImageContainer-portrait:not(.detailImageContainer-small):is(:has(.itemProgressBar), :not(:has(.cardOverlayContainer))),
+div[is="emby-itemscontainer"].detailImageContainer-portrait:not(.detailImageContainer-small):is(:has(.itemProgressBar), :not(:has(.cardOverlayContainer))) .cardPadder-portrait {
+    width: clamp(20vw, 49.5em, 28vw) !important;
+    padding-bottom: 0 !important;
+    aspect-ratio: 16 / 9 !important;
+}
+
+/* live tv channel schedule items, landscape */
+:is(div[data-action="linkdialog"], div[data-action="link"]).listItemImageContainer-large.listItemImageContainer-portrait,
+div[is="emby-itemscontainer"][data-monitor="Timers,SeriesTimers"][data-virtualscrolllayout="vertical-grid"] .listItemImageContainer-portrait {
+    aspect-ratio: 16 / 9 !important;
+}
+
+:is(div[data-action="linkdialog"], div[data-action="link"]).listItemImageContainer-large.listItemImageContainer-portrait img,
+div[is="emby-itemscontainer"][data-monitor="Timers,SeriesTimers"][data-virtualscrolllayout="vertical-grid"] .listItemImageContainer-portrait img {
+    aspect-ratio: 16 / 9 !important;
+    object-fit: contain !important;
+}
