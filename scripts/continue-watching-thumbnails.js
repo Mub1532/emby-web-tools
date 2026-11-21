@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Emby - episode thumbnails in Continue Watching Home screen.
-// @namespace    <replace with your full domain without https:// etc, eg , eg emby.media>
+// @namespace    emby-continue-watching-thumbs-mub
 // @version      1.2.0
 // @description  Shows the episode still instead of the show backdrop in Continue Watching
 // @match        <replace with your full emby domain, eg https://emby.media>/*

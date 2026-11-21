@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Emby landscape Cards - High Quality Res
-// @namespace    <replace with emby domain without https:// etc, eg emby.media>
+// @namespace    emby-high-q-thumbs-mub
 // @version      2.0
 // @description  Makes the emby landscape cards that sometimes are blurry, be little bit more quality.
 // @match        <replace with full domain, eg https://emby.media>/*
