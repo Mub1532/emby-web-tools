@@ -49,7 +49,7 @@
     const wantedWidth = Math.min(maxRequestWidth, Math.round(landscapeWidth * pixelRatio * oversample));
 
     // already big enough eg hero backdrops, or already upgraded
-    if (requestedWidth >= landscapeWidth * pixelRatio && !searchParams.has("maxHeight")) return;
+    if (requestedWidth >= wantedWidth && !searchParams.has("maxHeight")) return;
 
     // portrait height limits are what kill the quality on landscape cards
     searchParams.delete("maxHeight");
