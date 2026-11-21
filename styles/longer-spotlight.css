@@ -1,0 +1,21 @@
+:root {
+  --spotlight-extra: 120px;
+}
+
+.topSpotlightCardPadder {
+  max-height: calc(72vh + var(--spotlight-extra)) !important;
+}
+
+/* pull continue watching back up so only the image grows */
+.topSpotlightSection {
+  margin-bottom: calc(10.818px - var(--spotlight-extra)) !important;
+}
+
+/* move the title, buttons and dots back up by the same amount */
+.topSpotlightCardFooter {
+  padding-bottom: calc(6.5em + var(--spotlight-extra)) !important;
+}
+
+.topSpotlightSection > .emby-carousel {
+  bottom: calc(-7.212px + var(--spotlight-extra)) !important;
+}

@@ -14,7 +14,8 @@ Small scripts and fixes for the Emby web UI, such as episode thumbnails in Conti
 | [`hero-background-fix.css`](styles/hero-background-fix.css) | CSS | Stops the header going into a grey background when you scroll a bit |
 | [`continue-watching-thumbnails.js`](scripts/continue-watching-thumbnails.js) | Userscript | Shows the episode thumbnail in Continue Watching instead of the show backdrop |
 | [`high-quality-thumbs.js`](scripts/high-quality-thumbs.js) | Userscript | Requests landscape card images at a higher resolution so they aren't blurry |
-| [`fix-cutoff-home.css`](styles/fix-cutoff-home.css) | CSS | Makes the hero smaller so the whole Continue Watching row fits on screen without needing to scroll down |
+| [`fix-cutoff-home.css`](styles/fix-cutoff-home.css) | CSS | Makes it so the whole Continue Watching row (or whatever row you set in that section) fits on screen without needing to scroll down, eg normally hero makes it cut off. |
+| [`longer-spotlight.css`](styles/longer-spotlight.css) | CSS | Makes the hero image go more down behind Continue Watching or whatever row you have, to make it look nicer and more fluent. Works on its own or with `fix-cutoff-home.css` if you want the next section to not cut off. |
 
 ---
 
@@ -22,7 +23,7 @@ Small scripts and fixes for the Emby web UI, such as episode thumbnails in Conti
 
 ### CSS
 
-Add these to the **Admin Dashboard - General - Custom CSS** part in Emby.
+Add whichever one of these you want, can be 1, some, all etc. to the **Admin Dashboard - General - Custom CSS** part in Emby.
 
 **Landscape TV thumbnails:**
 
@@ -30,7 +31,7 @@ Add these to the **Admin Dashboard - General - Custom CSS** part in Emby.
 @import url('https://cdn.jsdelivr.net/gh/Mub1532/emby-web-tools@main/styles/landscape-tv-thumbs.css');
 ```
 
-**Hero background fix:**
+**Hero Header background when scrolling fix:**
 
 ```css
 .skinHeader-withBackground.headroom-scrolling {
@@ -41,9 +42,15 @@ Add these to the **Admin Dashboard - General - Custom CSS** part in Emby.
 **Continue Watching fit fix:**
 
 ```css
-.topSpotlightCardPadder {
-  max-height: max(20em, calc(100dvh - (93vw / max((var(--backdrop-cards) + var(--user-cards-size-adjust)), 1) - 22px) * 0.5625 - 140px)) !important;
+.topSpotlightSection .topSpotlightCardPadder {
+  max-height: max(20em, calc(100dvh - (93vw / max((var(--backdrop-cards) + var(--user-cards-size-adjust)), 1) - 22px) * 0.5625 - 140px + var(--spotlight-extra, 0px))) !important;
 }
+```
+
+**Longer spotlight:** (works on its own or with the fit fix)
+
+```css
+@import url('https://cdn.jsdelivr.net/gh/Mub1532/emby-web-tools@main/styles/longer-spotlight.css');
 ```
 
 ### Userscripts
@@ -75,6 +82,10 @@ Emby requests TV images at portrait sizes, so once they're shown landscape they 
 
 On bigger screens the hero takes up most of the page, so Continue Watching gets cut off and you have to scroll to see it. This make it so you dont need to scroll to see the continue watching, eg it aint cut off in bigger screens.
 
+### Longer spotlight
+
+Makes the hero image go further down behind the Continue Watching section, eg less blue (or whatever colour your theme is) gap between them. The title, buttons etc stay in the same place. Can also be used with the fit fix, to make the section not cut off etc.
+
 ---
 
 ## Emby Version
@@ -91,6 +102,15 @@ Works on all Emby versions but, Tested on Version 4.11.0.13 beta
 | Before | After |
 |--------|-------|
 | ![Before](screenshots/fix-cut-off-home/before.png) | ![After](screenshots/fix-cut-off-home/after.png) |
+
+</details>
+
+<details>
+<summary><b>Longer Spotlight with the blue (WMC) Emby Theme</b></summary>
+
+| Before | After |
+|--------|-------|
+| ![Before](screenshots/longer-spotlight/before.png) | ![After](screenshots/longer-spotlight/after.png) |
 
 </details>
 
