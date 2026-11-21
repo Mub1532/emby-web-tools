@@ -13,7 +13,7 @@
 
   if (window.embyHiResObserver) return;
 
-  // raise to 2 for crisper, heavier images
+  // change these settings if you want more quality, etc but more q also means higher image size etc.
   const oversample = 1.5;
   const jpegQuality = 95;
   const maxRequestWidth = 1920;
