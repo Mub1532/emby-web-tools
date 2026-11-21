@@ -14,6 +14,7 @@ Small scripts and fixes for the Emby web UI, such as episode thumbnails in Conti
 | [`hero-background-fix.css`](styles/hero-background-fix.css) | CSS | Stops the header going into a grey background when you scroll a bit |
 | [`continue-watching-thumbnails.js`](scripts/continue-watching-thumbnails.js) | Userscript | Shows the episode thumbnail in Continue Watching instead of the show backdrop |
 | [`high-quality-thumbs.js`](scripts/high-quality-thumbs.js) | Userscript | Requests landscape card images at a higher resolution so they aren't blurry |
+| [`fix-cutoff-home.css`](styles/fix-cutoff-home.css) | CSS | Makes the hero smaller so the whole Continue Watching row fits on screen without needing to scroll down |
 
 ---
 
@@ -34,6 +35,14 @@ Add these to the **Admin Dashboard - General - Custom CSS** part in Emby.
 ```css
 .skinHeader-withBackground.headroom-scrolling {
   background: transparent !important;
+}
+```
+
+**Continue Watching fit fix:**
+
+```css
+.topSpotlightCardPadder {
+  max-height: max(20em, calc(100dvh - (93vw / max((var(--backdrop-cards) + var(--user-cards-size-adjust)), 1) - 22px) * 0.5625 - 140px)) !important;
 }
 ```
 
@@ -62,6 +71,10 @@ By default Continue Watching shows the show's backdrop. This shows the thumbnail
 
 Emby requests TV images at portrait sizes, so once they're shown landscape they look blurry. This makes them at the width they're actually shown at.
 
+### Continue Watching fit fix
+
+On bigger screens the hero takes up most of the page, so Continue Watching gets cut off and you have to scroll to see it. This make it so you dont need to scroll to see the continue watching, eg it aint cut off in bigger screens.
+
 ---
 
 ## Emby Version
@@ -71,6 +84,15 @@ Works on all Emby versions but, Tested on Version 4.11.0.13 beta
 ---
 
 ## Screenshots - click each one to show/hide
+
+<details>
+<summary><b>Continue Watching Fit Fix</b></summary>
+
+| Before | After |
+|--------|-------|
+| ![Before](screenshots/fix-cut-off-home/before.png) | ![After](screenshots/fix-cut-off-home/after.png) |
+
+</details>
 
 <details>
 <summary><b>Continue Watching Thumbnails - Episode Thumbnails for TV Shows</b></summary>
