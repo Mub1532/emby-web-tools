@@ -11,6 +11,17 @@
     aspect-ratio: 16 / 9 !important;
 }
 
+/* tv mode guide preview image, landscape */
+.guideSelectedInfo .focusPreviewImageElement {
+    width: 35vh !important;
+    height: auto !important;
+}
+
+.guideSelectedInfo .focusPreviewImageCard .cardImageContainer {
+    aspect-ratio: 16 / 9 !important;
+    padding-bottom: 0 !important;
+}
+
 /* live tv list items, landscape at backdrop width */
 div[is="emby-itemscontainer"][data-virtualscrolllayout="horizontal-grid"]:is([data-monitor="Timers,SeriesTimers"], [data-refreshinterval="300000"]) .cardPadder-portrait {
     padding-bottom: 0 !important;
