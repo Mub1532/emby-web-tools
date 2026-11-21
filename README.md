@@ -1,6 +1,8 @@
 # Emby Web Tools
 
-Small scripts and fixes for the Emby web UI, such as episode thumbnails in Continue Watching, landscape TV thumbnails, fixing hero section etc. Screenshots below.
+Small scripts and fixes for the Emby web UI, such as episode thumbnails in Continue Watching, landscape TV thumbnails, fixing hero section etc.
+
+### **Screenshots at bottom of readme**.
 
 ---
 
