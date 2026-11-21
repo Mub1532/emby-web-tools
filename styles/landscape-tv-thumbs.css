@@ -21,6 +21,17 @@ div[is="emby-itemscontainer"][data-virtualscrolllayout="horizontal-grid"]:is([da
     width: calc(93vw / max((var(--backdrop-cards) + var(--user-cards-size-adjust)), 1)) !important;
 }
 
+/* more like this on a tv programme page only, landscape at backdrop width
+   record button only shows on programmes, so movies / shows keep portrait */
+.itemView:has(.singleRecordingButton:not(.hide)) .similarSection .cardPadder-portrait {
+    padding-bottom: 0 !important;
+    aspect-ratio: 16 / 9 !important;
+}
+
+.itemView:has(.singleRecordingButton:not(.hide)) .similarSection .virtualScrollItem {
+    width: calc(93vw / max((var(--backdrop-cards) + var(--user-cards-size-adjust)), 1)) !important;
+}
+
 /* live tv single item, landscape at backdrop width */
 div[is="emby-itemscontainer"].detailImageContainer-portrait:not(.detailImageContainer-small):is(:has(.itemProgressBar), :not(:has(.cardOverlayContainer))),
 div[is="emby-itemscontainer"].detailImageContainer-portrait:not(.detailImageContainer-small):is(:has(.itemProgressBar), :not(:has(.cardOverlayContainer))) .cardPadder-portrait {

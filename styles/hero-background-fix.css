@@ -1,0 +1,5 @@
+/* Fix for the hero header area going into a background colour randomly when you scroll */
+
+.skinHeader-withBackground.headroom-scrolling {
+  background: transparent !important;
+}
